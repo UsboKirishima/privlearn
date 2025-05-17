@@ -1,327 +1,419 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
 
-{% block title %}Phishing Attacks - CyberSafe Education{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Learn</title>
+    <!-- Bootstrap CSS (Replit theme) -->
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
 
-{% block content %}
-<div class="row mb-4">
-    <div class="col-lg-8">
-        <h1 class="mb-4">Phishing Attacks</h1>
-        <p class="lead">Learn how to identify and avoid phishing attempts that try to steal your credentials or personal information.</p>
-    </div>
-    <div class="col-lg-4 text-center">
-        <i class="fas fa-fishing-hook fa-6x text-warning"></i>
-    </div>
-</div>
-
-<div class="card mb-4">
-    <div class="card-body">
-        <h2>What is Phishing?</h2>
-        <p>Phishing is a type of cyber attack where attackers disguise themselves as trustworthy entities to trick victims into revealing sensitive information such as passwords, credit card numbers, or personal data. These attacks can come through various channels including:</p>
-        
-        <div class="row g-4 mt-2">
-            <div class="col-md-3 text-center">
-                <i class="fas fa-envelope fa-3x text-primary mb-2"></i>
-                <h5>Email</h5>
-            </div>
-            <div class="col-md-3 text-center">
-                <i class="fas fa-globe fa-3x text-primary mb-2"></i>
-                <h5>Websites</h5>
-            </div>
-            <div class="col-md-3 text-center">
-                <i class="fas fa-comment-alt fa-3x text-primary mb-2"></i>
-                <h5>Text Messages</h5>
-            </div>
-            <div class="col-md-3 text-center">
-                <i class="fas fa-phone fa-3x text-primary mb-2"></i>
-                <h5>Phone Calls</h5>
-            </div>
-        </div>
-    </div>
-</div>
-
-<h2 class="mb-3">Common Types of Phishing Attacks</h2>
-<div class="row g-4 mb-4">
-    <div class="col-md-6">
-        <div class="card h-100">
-            <div class="card-header bg-warning">
-                <h3 class="card-title mb-0">Email Phishing</h3>
-            </div>
-            <div class="card-body">
-                <p>The most common form of phishing, where attackers send emails pretending to be from legitimate organizations.</p>
-                
-                <h5>Common Targets:</h5>
-                <ul>
-                    <li>Banking & financial services</li>
-                    <li>E-commerce platforms</li>
-                    <li>Email and cloud storage providers</li>
-                    <li>Government agencies</li>
-                    <li>Payment services</li>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shield-alt"></i> Privacy Learn
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates/privacy.html">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates/cyber_attacks.html">Cyber Attacks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates/phishing.html">Phishing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/templates/quiz.html">Quiz</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </div>
-    
-    <div class="col-md-6">
-        <div class="card h-100">
-            <div class="card-header bg-warning">
-                <h3 class="card-title mb-0">Spear Phishing</h3>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="row mb-4">
+            <div class="col-lg-8">
+                <h1 class="mb-4">Phishing Attacks</h1>
+                <p class="lead">Learn how to identify and avoid phishing attempts that try to steal your credentials or
+                    personal information.</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fas fa-fishing-hook fa-6x text-warning"></i>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>What is Phishing?</h2>
+                <p>Phishing is a type of cyber attack where attackers disguise themselves as trustworthy entities to
+                    trick victims into revealing sensitive information such as passwords, credit card numbers, or
+                    personal data. These attacks can come through various channels including:</p>
+
+                <div class="row g-4 mt-2">
+                    <div class="col-md-3 text-center">
+                        <i class="fas fa-envelope fa-3x text-primary mb-2"></i>
+                        <h5>Email</h5>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <i class="fas fa-globe fa-3x text-primary mb-2"></i>
+                        <h5>Websites</h5>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <i class="fas fa-comment-alt fa-3x text-primary mb-2"></i>
+                        <h5>Text Messages</h5>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <i class="fas fa-phone fa-3x text-primary mb-2"></i>
+                        <h5>Phone Calls</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mb-3">Common Types of Phishing Attacks</h2>
+        <div class="row g-4 mb-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-warning">
+                        <h3 class="card-title mb-0">Email Phishing</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>The most common form of phishing, where attackers send emails pretending to be from
+                            legitimate organizations.</p>
+
+                        <h5>Common Targets:</h5>
+                        <ul>
+                            <li>Banking & financial services</li>
+                            <li>E-commerce platforms</li>
+                            <li>Email and cloud storage providers</li>
+                            <li>Government agencies</li>
+                            <li>Payment services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-warning">
+                        <h3 class="card-title mb-0">Spear Phishing</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Highly targeted phishing attempts that use personal information to create more convincing
+                            messages.</p>
+
+                        <h5>Tactics Used:</h5>
+                        <ul>
+                            <li>References to real colleagues or events</li>
+                            <li>Use of your actual name and job title</li>
+                            <li>Mentions of projects you're working on</li>
+                            <li>Impersonation of executives or IT staff</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-warning">
+                        <h3 class="card-title mb-0">Smishing (SMS Phishing)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Phishing attacks conducted via SMS or text messages.</p>
+
+                        <h5>Common Examples:</h5>
+                        <ul>
+                            <li>"Your package delivery status has changed. Track here: [malicious link]"</li>
+                            <li>"Unusual sign-in detected on your account. Verify here: [malicious link]"</li>
+                            <li>"Your bank account has been suspended. Call [fake number] immediately"</li>
+                            <li>"You've won a gift card! Claim now: [malicious link]"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-warning">
+                        <h3 class="card-title mb-0">Clone Phishing</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Attackers create nearly identical replicas of legitimate messages you've received before, but
+                            replace links or attachments with malicious ones.</p>
+
+                        <h5>How It Works:</h5>
+                        <ol>
+                            <li>You receive a legitimate email from a trusted service (e.g., a cloud storage share
+                                notification)</li>
+                            <li>Attackers create an identical email with the same branding, formatting, and content</li>
+                            <li>They change the links to direct to malicious sites or add infected attachments</li>
+                            <li>They may claim it's a "corrected" or "updated" version of a previous message</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mb-4">How to Identify Phishing Attempts</h2>
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">Red Flags in Phishing Messages</h3>
             </div>
             <div class="card-body">
-                <p>Highly targeted phishing attempts that use personal information to create more convincing messages.</p>
-                
-                <h5>Tactics Used:</h5>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-danger">
+                                <i class="fas fa-exclamation-circle fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Urgent Action Required</h5>
+                                <p>Creating a sense of urgency to rush you into making mistakes: "Immediate action
+                                    required" or "Account will be terminated within 24 hours"</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-danger">
+                                <i class="fas fa-exclamation-circle fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Suspicious Sender Address</h5>
+                                <p>Email addresses that mimic legitimate companies but with slight variations:
+                                    "amazon-support@amazn-secure.com" instead of an official amazon.com address</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-danger">
+                                <i class="fas fa-exclamation-circle fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Grammatical Errors</h5>
+                                <p>Poor grammar, spelling mistakes, and unusual phrasing that wouldn't appear in
+                                    professional communications</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-danger">
+                                <i class="fas fa-exclamation-circle fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Suspicious Links</h5>
+                                <p>URLs that look similar to legitimate sites but are slightly different:
+                                    "www.paypa1.com" (using the number "1" instead of the letter "l")</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-danger">
+                                <i class="fas fa-exclamation-circle fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Requests for Sensitive Information</h5>
+                                <p>Legitimate organizations will never ask for passwords, credit card numbers, or full
+                                    social security numbers via email</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-danger">
+                                <i class="fas fa-exclamation-circle fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Generic Greetings</h5>
+                                <p>Impersonal greetings like "Dear Customer" instead of your actual name, especially
+                                    from services that would know your name</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mb-3">Real-world Examples</h2>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3>Example 1: Banking Phishing Email</h3>
+                <div class="alert alert-danger">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p><strong>From:</strong> secure-banking@bankofamerica-secure.com</p>
+                            <p><strong>Subject:</strong> URGENT: Your Bank of America account has been locked</p>
+                            <hr>
+                            <p>Dear Valued Customer,</p>
+                            <p>We have detected suspicious activity on your Bank of America account. For your
+                                protection, we have temporarily locked your account access.</p>
+                            <p>To restore your account access, please <u>click here to verify your information</u>
+                                within the next 24 hours.</p>
+                            <p>Failure to verify your account will result in permanent suspension of your online banking
+                                access.</p>
+                            <p>Bank of America Customer Service Team</p>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <i class="fas fa-times-circle fa-4x text-danger"></i>
+                            <p class="mt-2"><strong>FAKE</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Red Flags:</h4>
                 <ul>
-                    <li>References to real colleagues or events</li>
-                    <li>Use of your actual name and job title</li>
-                    <li>Mentions of projects you're working on</li>
-                    <li>Impersonation of executives or IT staff</li>
+                    <li>Suspicious sender email (not an official bankofamerica.com domain)</li>
+                    <li>Creates urgency and fear</li>
+                    <li>Generic greeting instead of using your name</li>
+                    <li>Asks you to click on an unspecified link</li>
+                    <li>Threatens negative consequences</li>
                 </ul>
             </div>
         </div>
-    </div>
-    
-    <div class="col-md-6">
-        <div class="card h-100">
-            <div class="card-header bg-warning">
-                <h3 class="card-title mb-0">Smishing (SMS Phishing)</h3>
-            </div>
+
+        <div class="card mb-5">
             <div class="card-body">
-                <p>Phishing attacks conducted via SMS or text messages.</p>
-                
-                <h5>Common Examples:</h5>
+                <h3>Example 2: Package Delivery SMS Phishing</h3>
+                <div class="alert alert-danger">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <p><strong>Text Message:</strong></p>
+                            <p>"FedEx: Your package with tracking #FDX4729163 is pending delivery. Update your delivery
+                                preferences: fdx-delivery.info/update"</p>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <i class="fas fa-times-circle fa-4x text-danger"></i>
+                            <p class="mt-2"><strong>FAKE</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Red Flags:</h4>
                 <ul>
-                    <li>"Your package delivery status has changed. Track here: [malicious link]"</li>
-                    <li>"Unusual sign-in detected on your account. Verify here: [malicious link]"</li>
-                    <li>"Your bank account has been suspended. Call [fake number] immediately"</li>
-                    <li>"You've won a gift card! Claim now: [malicious link]"</li>
+                    <li>URL is not the official FedEx domain (fedex.com)</li>
+                    <li>Lacks specific details about your actual package</li>
+                    <li>Creates a sense of urgency about a pending delivery</li>
+                    <li>Shortened or suspicious URL</li>
                 </ul>
             </div>
         </div>
-    </div>
-    
-    <div class="col-md-6">
-        <div class="card h-100">
-            <div class="card-header bg-warning">
-                <h3 class="card-title mb-0">Clone Phishing</h3>
+
+        <h2 class="mb-4">How to Protect Yourself from Phishing</h2>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="card-title mb-0"><i class="fas fa-shield-alt me-2"></i> Technical Defenses</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>Use anti-phishing browser extensions</strong> that can detect and block known
+                                phishing sites</li>
+                            <li><strong>Keep your browser and security software updated</strong> to protect against the
+                                latest threats</li>
+                            <li><strong>Enable multi-factor authentication (MFA)</strong> on all important accounts so
+                                that even if credentials are stolen, attackers can't access your accounts</li>
+                            <li><strong>Use a password manager</strong> to generate and store strong, unique passwords
+                            </li>
+                            <li><strong>Check for HTTPS</strong> (padlock icon) when visiting websites, especially
+                                before entering any sensitive information</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="card-title mb-0"><i class="fas fa-brain me-2"></i> Behavioral Defenses</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>Verify the sender</strong> before taking any action on suspicious messages</li>
+                            <li><strong>Hover over links</strong> to see the actual URL before clicking</li>
+                            <li><strong>Never share sensitive information</strong> in response to an email or text
+                                message</li>
+                            <li><strong>Type URLs directly</strong> into your browser instead of clicking links in
+                                messages</li>
+                            <li><strong>Call the company directly</strong> using a phone number from their official
+                                website if you receive a suspicious message claiming to be from them</li>
+                            <li><strong>Be skeptical of urgent requests</strong> especially those threatening negative
+                                consequences</li>
+                            <li><strong>Report phishing attempts</strong> to the organization being impersonated and
+                                appropriate authorities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
             <div class="card-body">
-                <p>Attackers create nearly identical replicas of legitimate messages you've received before, but replace links or attachments with malicious ones.</p>
-                
-                <h5>How It Works:</h5>
+                <h3>What to Do If You've Been Phished</h3>
+                <div class="alert alert-info">
+                    <h5><i class="fas fa-info-circle me-2"></i> If you suspect you've fallen victim to a phishing
+                        attack, act quickly:</h5>
+                </div>
+
                 <ol>
-                    <li>You receive a legitimate email from a trusted service (e.g., a cloud storage share notification)</li>
-                    <li>Attackers create an identical email with the same branding, formatting, and content</li>
-                    <li>They change the links to direct to malicious sites or add infected attachments</li>
-                    <li>They may claim it's a "corrected" or "updated" version of a previous message</li>
+                    <li><strong>Change your passwords immediately</strong> for any accounts that may be compromised</li>
+                    <li><strong>Enable multi-factor authentication</strong> if it's not already enabled</li>
+                    <li><strong>Contact your financial institutions</strong> if you've shared financial information or
+                        suspect unauthorized transactions</li>
+                    <li><strong>Run a security scan</strong> on your device to check for malware</li>
+                    <li><strong>Report the phishing attempt</strong> to:
+                        <ul>
+                            <li>The organization being impersonated</li>
+                            <li>Your email provider (for email phishing)</li>
+                            <li>The FTC at <a href="https://reportfraud.ftc.gov" target="_blank">reportfraud.ftc.gov</a>
+                            </li>
+                            <li>The Anti-Phishing Working Group at <a href="https://reportphishing.org"
+                                    target="_blank">reportphishing.org</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>Monitor your accounts</strong> for suspicious activity in the following weeks</li>
                 </ol>
             </div>
         </div>
-    </div>
-</div>
 
-<h2 class="mb-4">How to Identify Phishing Attempts</h2>
-
-<div class="card mb-4">
-    <div class="card-header bg-primary text-white">
-        <h3 class="mb-0">Red Flags in Phishing Messages</h3>
-    </div>
-    <div class="card-body">
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="d-flex mb-3">
-                    <div class="me-3 text-danger">
-                        <i class="fas fa-exclamation-circle fa-2x"></i>
-                    </div>
-                    <div>
-                        <h5>Urgent Action Required</h5>
-                        <p>Creating a sense of urgency to rush you into making mistakes: "Immediate action required" or "Account will be terminated within 24 hours"</p>
-                    </div>
-                </div>
-                
-                <div class="d-flex mb-3">
-                    <div class="me-3 text-danger">
-                        <i class="fas fa-exclamation-circle fa-2x"></i>
-                    </div>
-                    <div>
-                        <h5>Suspicious Sender Address</h5>
-                        <p>Email addresses that mimic legitimate companies but with slight variations: "amazon-support@amazn-secure.com" instead of an official amazon.com address</p>
-                    </div>
-                </div>
-                
-                <div class="d-flex mb-3">
-                    <div class="me-3 text-danger">
-                        <i class="fas fa-exclamation-circle fa-2x"></i>
-                    </div>
-                    <div>
-                        <h5>Grammatical Errors</h5>
-                        <p>Poor grammar, spelling mistakes, and unusual phrasing that wouldn't appear in professional communications</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6">
-                <div class="d-flex mb-3">
-                    <div class="me-3 text-danger">
-                        <i class="fas fa-exclamation-circle fa-2x"></i>
-                    </div>
-                    <div>
-                        <h5>Suspicious Links</h5>
-                        <p>URLs that look similar to legitimate sites but are slightly different: "www.paypa1.com" (using the number "1" instead of the letter "l")</p>
-                    </div>
-                </div>
-                
-                <div class="d-flex mb-3">
-                    <div class="me-3 text-danger">
-                        <i class="fas fa-exclamation-circle fa-2x"></i>
-                    </div>
-                    <div>
-                        <h5>Requests for Sensitive Information</h5>
-                        <p>Legitimate organizations will never ask for passwords, credit card numbers, or full social security numbers via email</p>
-                    </div>
-                </div>
-                
-                <div class="d-flex mb-3">
-                    <div class="me-3 text-danger">
-                        <i class="fas fa-exclamation-circle fa-2x"></i>
-                    </div>
-                    <div>
-                        <h5>Generic Greetings</h5>
-                        <p>Impersonal greetings like "Dear Customer" instead of your actual name, especially from services that would know your name</p>
-                    </div>
-                </div>
-            </div>
+        <div class="text-center mb-5">
+            <h3>Ready to test your knowledge about phishing?</h3>
+            <a href="/templates/quiz.html" class="btn btn-primary btn-lg">Take the Quiz</a>
         </div>
-    </div>
-</div>
+    </main>
 
-<h2 class="mb-3">Real-world Examples</h2>
-
-<div class="card mb-4">
-    <div class="card-body">
-        <h3>Example 1: Banking Phishing Email</h3>
-        <div class="alert alert-danger">
-            <div class="row">
-                <div class="col-md-10">
-                    <p><strong>From:</strong> secure-banking@bankofamerica-secure.com</p>
-                    <p><strong>Subject:</strong> URGENT: Your Bank of America account has been locked</p>
-                    <hr>
-                    <p>Dear Valued Customer,</p>
-                    <p>We have detected suspicious activity on your Bank of America account. For your protection, we have temporarily locked your account access.</p>
-                    <p>To restore your account access, please <u>click here to verify your information</u> within the next 24 hours.</p>
-                    <p>Failure to verify your account will result in permanent suspension of your online banking access.</p>
-                    <p>Bank of America Customer Service Team</p>
-                </div>
-                <div class="col-md-2 text-center">
-                    <i class="fas fa-times-circle fa-4x text-danger"></i>
-                    <p class="mt-2"><strong>FAKE</strong></p>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+            <span class="text-muted">© 2025 Davide Usberti, Matthew Gasparetti, Alesio Broshka | Created for educational
+                purposes</span>
         </div>
-        
-        <h4>Red Flags:</h4>
-        <ul>
-            <li>Suspicious sender email (not an official bankofamerica.com domain)</li>
-            <li>Creates urgency and fear</li>
-            <li>Generic greeting instead of using your name</li>
-            <li>Asks you to click on an unspecified link</li>
-            <li>Threatens negative consequences</li>
-        </ul>
-    </div>
-</div>
+    </footer>
 
-<div class="card mb-5">
-    <div class="card-body">
-        <h3>Example 2: Package Delivery SMS Phishing</h3>
-        <div class="alert alert-danger">
-            <div class="row">
-                <div class="col-md-10">
-                    <p><strong>Text Message:</strong></p>
-                    <p>"FedEx: Your package with tracking #FDX4729163 is pending delivery. Update your delivery preferences: fdx-delivery.info/update"</p>
-                </div>
-                <div class="col-md-2 text-center">
-                    <i class="fas fa-times-circle fa-4x text-danger"></i>
-                    <p class="mt-2"><strong>FAKE</strong></p>
-                </div>
-            </div>
-        </div>
-        
-        <h4>Red Flags:</h4>
-        <ul>
-            <li>URL is not the official FedEx domain (fedex.com)</li>
-            <li>Lacks specific details about your actual package</li>
-            <li>Creates a sense of urgency about a pending delivery</li>
-            <li>Shortened or suspicious URL</li>
-        </ul>
-    </div>
-</div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="/static/js/main.js"></script>
+</body>
 
-<h2 class="mb-4">How to Protect Yourself from Phishing</h2>
-
-<div class="row g-4 mb-5">
-    <div class="col-md-6">
-        <div class="card h-100">
-            <div class="card-header bg-success text-white">
-                <h3 class="card-title mb-0"><i class="fas fa-shield-alt me-2"></i> Technical Defenses</h3>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li><strong>Use anti-phishing browser extensions</strong> that can detect and block known phishing sites</li>
-                    <li><strong>Keep your browser and security software updated</strong> to protect against the latest threats</li>
-                    <li><strong>Enable multi-factor authentication (MFA)</strong> on all important accounts so that even if credentials are stolen, attackers can't access your accounts</li>
-                    <li><strong>Use a password manager</strong> to generate and store strong, unique passwords</li>
-                    <li><strong>Check for HTTPS</strong> (padlock icon) when visiting websites, especially before entering any sensitive information</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-md-6">
-        <div class="card h-100">
-            <div class="card-header bg-success text-white">
-                <h3 class="card-title mb-0"><i class="fas fa-brain me-2"></i> Behavioral Defenses</h3>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li><strong>Verify the sender</strong> before taking any action on suspicious messages</li>
-                    <li><strong>Hover over links</strong> to see the actual URL before clicking</li>
-                    <li><strong>Never share sensitive information</strong> in response to an email or text message</li>
-                    <li><strong>Type URLs directly</strong> into your browser instead of clicking links in messages</li>
-                    <li><strong>Call the company directly</strong> using a phone number from their official website if you receive a suspicious message claiming to be from them</li>
-                    <li><strong>Be skeptical of urgent requests</strong> especially those threatening negative consequences</li>
-                    <li><strong>Report phishing attempts</strong> to the organization being impersonated and appropriate authorities</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="card mb-4">
-    <div class="card-body">
-        <h3>What to Do If You've Been Phished</h3>
-        <div class="alert alert-info">
-            <h5><i class="fas fa-info-circle me-2"></i> If you suspect you've fallen victim to a phishing attack, act quickly:</h5>
-        </div>
-        
-        <ol>
-            <li><strong>Change your passwords immediately</strong> for any accounts that may be compromised</li>
-            <li><strong>Enable multi-factor authentication</strong> if it's not already enabled</li>
-            <li><strong>Contact your financial institutions</strong> if you've shared financial information or suspect unauthorized transactions</li>
-            <li><strong>Run a security scan</strong> on your device to check for malware</li>
-            <li><strong>Report the phishing attempt</strong> to:
-                <ul>
-                    <li>The organization being impersonated</li>
-                    <li>Your email provider (for email phishing)</li>
-                    <li>The FTC at <a href="https://reportfraud.ftc.gov" target="_blank">reportfraud.ftc.gov</a></li>
-                    <li>The Anti-Phishing Working Group at <a href="https://reportphishing.org" target="_blank">reportphishing.org</a></li>
-                </ul>
-            </li>
-            <li><strong>Monitor your accounts</strong> for suspicious activity in the following weeks</li>
-        </ol>
-    </div>
-</div>
-
-<div class="text-center mb-5">
-    <h3>Ready to test your knowledge about phishing?</h3>
-    <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg">Take the Quiz</a>
-</div>
-{% endblock %}
+</html>

@@ -1,5 +1,5 @@
 /**
- * CyberSafe Education - Main JavaScript
+ * Davide Usberti, Matthew Gasparetti, Alesio Broshka - Main JavaScript
  * Handles general UI interactions and animations
  */
 

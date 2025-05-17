@@ -1,5 +1,5 @@
 /**
- * CyberSafe Education - Quiz JavaScript
+ * Davide Usberti, Matthew Gasparetti, Alesio Broshka - Quiz JavaScript
  * Handles the interactive quiz functionality
  */
 
