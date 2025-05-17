@@ -1,18 +1,15 @@
 /**
- * Davide Usberti, Matthew Gasparetti, Alesio Broshka - Quiz JavaScript
- * Handles the interactive quiz functionality
+ * Davide Usberti, Matthew Gasparetti, Alesio Broshka 
+ * Gestione delle funzionalità del quiz presente nel sito di Privacy Learn.
  */
 
-// Riga 276
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementi DOM based
+    // Elementi del DOM su cui lavorare
     const quizIntro = document.getElementById('quiz-intro');
     const questionsSection = document.getElementById('quiz-questions');
     const quizResults = document.getElementById('quiz-results');
     const reviewContainer = document.getElementById('review-container');
     
-    // Bottoni
     const startQuizBtn = document.getElementById('start-quiz');
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
@@ -20,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const retakeQuizBtn = document.getElementById('retake-quiz');
     const backToResultsBtn = document.getElementById('back-to-results');
     
-    // Elementi di visualizzazione
     const questionCounter = document.getElementById('question-counter');
     const questionContainer = document.getElementById('question-container');
     const scorePercentage = document.getElementById('score-percentage');
@@ -31,7 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const timerDisplay = document.getElementById('timer');
     const questionsReview = document.getElementById('questions-review');
     
-    // Variabili di stato
+    /**
+     * Variabili utili per la gestione del quiz
+     
+     * currentQuestionIndex: Indice della domanda corrente
+     * userAnswers: Array per memorizzare le risposte dell'utente
+     * quizStartTime: Timestamp di inizio del quiz
+     * timerInterval: Intervallo per il timer del quiz
+    */
     let currentQuestionIndex = 0;
     let userAnswers = [];
     let quizStartTime;
@@ -151,7 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
     
-    // Tutti gli ascoltatori
     startQuizBtn.addEventListener('click', startQuiz);
     prevButton.addEventListener('click', goToPreviousQuestion);
     nextButton.addEventListener('click', goToNextQuestion);
