@@ -13,6 +13,15 @@ footer {
     margin-top: auto;
 }
 
+.fullscreen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* Landing Page */
 .landing-section {
     background-color: var(--bs-dark);
