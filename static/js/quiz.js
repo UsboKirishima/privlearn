@@ -3,14 +3,16 @@
  * Handles the interactive quiz functionality
  */
 
+// Riga 276
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Quiz elements
+    // Elementi DOM based
     const quizIntro = document.getElementById('quiz-intro');
     const questionsSection = document.getElementById('quiz-questions');
     const quizResults = document.getElementById('quiz-results');
     const reviewContainer = document.getElementById('review-container');
     
-    // Buttons
+    // Bottoni
     const startQuizBtn = document.getElementById('start-quiz');
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
@@ -18,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const retakeQuizBtn = document.getElementById('retake-quiz');
     const backToResultsBtn = document.getElementById('back-to-results');
     
-    // Display elements
+    // Elementi di visualizzazione
     const questionCounter = document.getElementById('question-counter');
     const questionContainer = document.getElementById('question-container');
     const scorePercentage = document.getElementById('score-percentage');
@@ -29,13 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const timerDisplay = document.getElementById('timer');
     const questionsReview = document.getElementById('questions-review');
     
-    // Quiz state variables
+    // Variabili di stato
     let currentQuestionIndex = 0;
     let userAnswers = [];
     let quizStartTime;
     let timerInterval;
     
-    // Quiz questions array
+    // Domande, opzioni, risposte corrette e spiegazioni
     const quizQuestions = [
         {
             question: "What is phishing?",
@@ -149,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
     
-    // Event listeners
+    // Tutti gli ascoltatori
     startQuizBtn.addEventListener('click', startQuiz);
     prevButton.addEventListener('click', goToPreviousQuestion);
     nextButton.addEventListener('click', goToNextQuestion);
@@ -157,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
     retakeQuizBtn.addEventListener('click', retakeQuiz);
     backToResultsBtn.addEventListener('click', backToResults);
     
-    // Initialize quiz
+    // Inizializzazione bootstrap tooltip
     function startQuiz() {
         quizIntro.classList.add('d-none');
         questionsSection.classList.remove('d-none');
@@ -168,28 +170,28 @@ document.addEventListener('DOMContentLoaded', function() {
         userAnswers = Array(quizQuestions.length).fill(null);
         displayQuestion(currentQuestionIndex);
         
-        // Start timer
+        // Parte il timer del quiz
         quizStartTime = new Date();
         timerInterval = setInterval(updateTimer, 1000);
         
-        // Update display
+        // Aggiorna il display
         totalQuestions.textContent = quizQuestions.length;
     }
     
-    // Display current question
+    // Domanda attuale
     function displayQuestion(index) {
-        // Update question counter
         questionCounter.textContent = `Question ${index + 1}/${quizQuestions.length}`;
         
-        // Create question HTML
+        // Crea la domanda in modo dinamico 
         const question = quizQuestions[index];
         let questionHTML = `
             <h3 class="mb-4">${question.question}</h3>
             <div class="options-container">
         `;
         
-        // Add options
+        // Crea le opzioni in modo dinamico
         question.options.forEach((option, optionIndex) => {
+            // Se viene selezionata un opzione la evidenzia
             const isSelected = userAnswers[index] === optionIndex;
             questionHTML += `
                 <div class="quiz-option ${isSelected ? 'selected' : ''}" data-index="${optionIndex}">
@@ -206,14 +208,15 @@ document.addEventListener('DOMContentLoaded', function() {
         questionHTML += `</div>`;
         questionContainer.innerHTML = questionHTML;
         
-        // Add event listeners to options
+        // Classico ascoltatore per le opzioni
         document.querySelectorAll('.quiz-option').forEach(option => {
             option.addEventListener('click', selectOption);
         });
         
-        // Update buttons
+        // Disabilita il bottone precedente
         prevButton.disabled = index === 0;
         
+        // Se siamo all'ultima domanda cambia il testo del bottone
         if (index === quizQuestions.length - 1) {
             nextButton.textContent = 'Finish Quiz';
         } else {
@@ -221,24 +224,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Handle option selection
+    /**  
+     * Entriamo nel dettaglio della selezione dell'opzione.
+     * 
+     * Se l'utente clicca su un'opzione, viene evidenziata e salvata come risposta dell'utente.
+     * Le altre opzioni vengono deselezionate.
+     * La risposta viene salvata perchè alla fine del quiz verrà calcolato il punteggio.
+     * Alla fine del quiz, sarà disponibile una revisione delle domande e delle risposte.
+    */
     function selectOption(event) {
         const selectedOption = event.currentTarget;
         const optionIndex = parseInt(selectedOption.dataset.index);
         
-        // Remove selection from all options
+        // Rimuove la selezione da tutte le opzioni
         document.querySelectorAll('.quiz-option').forEach(option => {
             option.classList.remove('selected');
         });
         
-        // Add selection to clicked option
+        // Aggiunge la selezione all'opzione cliccata
         selectedOption.classList.add('selected');
         
-        // Save user answer
+        // Salva la risposta dell'utente
         userAnswers[currentQuestionIndex] = optionIndex;
     }
     
-    // Navigate to previous question
+    // Domanda precedente
     function goToPreviousQuestion() {
         if (currentQuestionIndex > 0) {
             currentQuestionIndex--;
@@ -246,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Navigate to next question or finish quiz
+    // Domanda successiva o termina il quiz
     function goToNextQuestion() {
         if (currentQuestionIndex < quizQuestions.length - 1) {
             currentQuestionIndex++;
@@ -256,21 +266,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Complete the quiz and show results
+    // Termine del quiz ed interruzione del timer
     function finishQuiz() {
-        // Stop timer
         clearInterval(timerInterval);
         
-        // Calculate score
+        // Calcolo del punteggio
         const score = calculateScore();
+
+        // https://dev.to/mayankav/javascript-s-broken-mathematics-304m
         const percentage = Math.round((score.correct / quizQuestions.length) * 100);
         
-        // Update results display
+        // Aggiorna il punteggio
         scorePercentage.textContent = `${percentage}%`;
         correctAnswers.textContent = score.correct;
         scoreProgress.style.width = `${percentage}%`;
         
-        // Customize score message
+        // Messaggi basati sul punteggio 
         if (percentage >= 90) {
             scoreMessage.className = 'alert alert-success mt-3';
             scoreMessage.innerHTML = '<strong>Excellent!</strong> You have a strong understanding of online privacy and security concepts.';
@@ -285,15 +296,19 @@ document.addEventListener('DOMContentLoaded', function() {
             scoreMessage.innerHTML = '<strong>Need improvement.</strong> We recommend reviewing the educational content to better protect yourself online.';
         }
         
-        // Show results screen
+        // Mostra il risultato finale
         questionsSection.classList.add('d-none');
         quizResults.classList.remove('d-none');
         
-        // Save results to local storage
+        /**
+         * Utilizzo il local storage ed è un magheggio assurdo per le app client-side.
+         * Questo mi permette di salvare i risultati senza settare un cookie. ( Riga 407 )
+         * In questo modo l'utente può vedere i risultati anche dopo aver chiuso il browser.
+         */
         saveQuizResults(percentage, score.correct, quizQuestions.length);
     }
     
-    // Calculate quiz score
+    // Calcolo del punteggio
     function calculateScore() {
         let correct = 0;
         
@@ -309,10 +324,10 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
     
-    // Update timer display
+    // Aggiorna il timer
     function updateTimer() {
         const currentTime = new Date();
-        const elapsedTime = Math.floor((currentTime - quizStartTime) / 1000); // in seconds
+        const elapsedTime = Math.floor((currentTime - quizStartTime) / 1000); // Secondi 
         
         const minutes = Math.floor(elapsedTime / 60);
         const seconds = elapsedTime % 60;
@@ -320,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
         timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
     
-    // Show answer review
+    // Revisione delle domande
     function showReview() {
         quizResults.classList.add('d-none');
         reviewContainer.classList.remove('d-none');
@@ -377,18 +392,25 @@ document.addEventListener('DOMContentLoaded', function() {
         questionsReview.innerHTML = reviewHTML;
     }
     
-    // Go back to results from review
+    // Torna ai risultati
     function backToResults() {
         reviewContainer.classList.add('d-none');
         quizResults.classList.remove('d-none');
     }
     
-    // Retake the quiz
+    // Ricomincia il quiz
     function retakeQuiz() {
         startQuiz();
     }
     
-    // Save quiz results to local storage
+    // Magheggio raccontato prima
+    /**
+    *   "date": "2025-05-17T19:53:14.451Z",
+    *   "percentage": 100,
+    *   "correct": 10,
+    *   "total": 10,
+    *   "timeSpent": "00:50"
+    */
     function saveQuizResults(percentage, correct, total) {
         const results = {
             date: new Date().toISOString(),
@@ -398,13 +420,36 @@ document.addEventListener('DOMContentLoaded', function() {
             timeSpent: timerDisplay.textContent
         };
         
-        // Get existing results or initialize empty array
+        // Qua cerco di recuperare i risultati precedenti sennò creo un oggetto empty
         let quizHistory = JSON.parse(localStorage.getItem('quizHistory')) || [];
         
-        // Add current result
+        // Push dei risultati nella storia
         quizHistory.push(results);
         
-        // Save back to local storage
+        // Salvo i risultati nel local storage
         localStorage.setItem('quizHistory', JSON.stringify(quizHistory));
+
+        /**
+         * Perchè aggiungere i nuovi risultati anche se ci sono risultati precedenti?
+         * Se l'utente fa più volte il quiz, i risultati vengono accumulati e mostrati in una lista.
+        
+         * Qua sotto un esempio di come vengono salvati i risultati in caso di più quiz:
+        [
+            {
+                "date": "2025-05-17T19:53:14.451Z",
+                "percentage": 80,
+                "correct": 8,
+                "total": 10,
+                "timeSpent": "00:50"
+            },
+            {
+                "date": "2025-05-17T19:55:37.347Z",
+                "percentage": 100,
+                "correct": 10,
+                "total": 10,
+                "timeSpent": "00:22"
+            }
+        ]
+        */
     }
 });
