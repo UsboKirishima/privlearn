@@ -3,20 +3,20 @@
  * Gestione delle funzionalità del quiz presente nel sito di Privacy Learn.
  */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Elementi del DOM su cui lavorare
     const quizIntro = document.getElementById('quiz-intro');
     const questionsSection = document.getElementById('quiz-questions');
     const quizResults = document.getElementById('quiz-results');
     const reviewContainer = document.getElementById('review-container');
-    
+
     const startQuizBtn = document.getElementById('start-quiz');
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
     const reviewAnswersBtn = document.getElementById('review-answers');
     const retakeQuizBtn = document.getElementById('retake-quiz');
     const backToResultsBtn = document.getElementById('back-to-results');
-    
+
     const questionCounter = document.getElementById('question-counter');
     const questionContainer = document.getElementById('question-container');
     const scorePercentage = document.getElementById('score-percentage');
@@ -26,7 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const scoreProgress = document.getElementById('score-progress');
     const timerDisplay = document.getElementById('timer');
     const questionsReview = document.getElementById('questions-review');
-    
+
+    // Tempo limite del quiz in secondi (5 minuti)
+    const TIME_LIMIT = 5 * 60;
+    let timeLeft = TIME_LIMIT;
+
     /**
      * Variabili utili per la gestione del quiz
      
@@ -37,9 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
     */
     let currentQuestionIndex = 0;
     let userAnswers = [];
-    let quizStartTime;
     let timerInterval;
-    
+
     // Domande, opzioni, risposte corrette e spiegazioni
     const quizQuestions = [
         {
@@ -153,14 +156,14 @@ document.addEventListener('DOMContentLoaded', function() {
             explanation: "Never use the contact information or links provided in the suspicious email. Instead, contact your bank through official channels (phone number from their official website or visit a branch) to verify any communication."
         }
     ];
-    
+
     startQuizBtn.addEventListener('click', startQuiz);
     prevButton.addEventListener('click', goToPreviousQuestion);
     nextButton.addEventListener('click', goToNextQuestion);
     reviewAnswersBtn.addEventListener('click', showReview);
     retakeQuizBtn.addEventListener('click', retakeQuiz);
     backToResultsBtn.addEventListener('click', backToResults);
-    
+
     // Inizializzazione bootstrap tooltip
     function startQuiz() {
         quizIntro.classList.add('d-none');
@@ -172,25 +175,54 @@ document.addEventListener('DOMContentLoaded', function() {
         userAnswers = Array(quizQuestions.length).fill(null);
         displayQuestion(currentQuestionIndex);
         
-        // Parte il timer del quiz
-        quizStartTime = new Date();
+        // Reset e avvio del timer
+        timeLeft = TIME_LIMIT;
+        updateTimerDisplay();
         timerInterval = setInterval(updateTimer, 1000);
         
         // Aggiorna il display
         totalQuestions.textContent = quizQuestions.length;
     }
     
+    // Aggiorna il timer
+    function updateTimer() {
+        timeLeft--;
+        updateTimerDisplay();
+        
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            finishQuiz();
+        }
+    }
+    
+
+    // Aggiorna il timer
+    function updateTimerDisplay() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        // Cambia colore quando il tempo sta per scadere
+        if (timeLeft <= 30) {
+            timerDisplay.classList.add('text-danger');
+            timerDisplay.classList.add('fw-bold');
+        } else {
+            timerDisplay.classList.remove('text-danger');
+            timerDisplay.classList.remove('fw-bold');
+        }
+    }
+
     // Domanda attuale
     function displayQuestion(index) {
         questionCounter.textContent = `Question ${index + 1}/${quizQuestions.length}`;
-        
+
         // Crea la domanda in modo dinamico 
         const question = quizQuestions[index];
         let questionHTML = `
             <h3 class="mb-4">${question.question}</h3>
             <div class="options-container">
         `;
-        
+
         // Crea le opzioni in modo dinamico
         question.options.forEach((option, optionIndex) => {
             // Se viene selezionata un opzione la evidenzia
@@ -206,18 +238,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
         });
-        
+
         questionHTML += `</div>`;
         questionContainer.innerHTML = questionHTML;
-        
+
         // Classico ascoltatore per le opzioni
         document.querySelectorAll('.quiz-option').forEach(option => {
             option.addEventListener('click', selectOption);
         });
-        
+
         // Disabilita il bottone precedente
         prevButton.disabled = index === 0;
-        
+
         // Se siamo all'ultima domanda cambia il testo del bottone
         if (index === quizQuestions.length - 1) {
             nextButton.textContent = 'Finish Quiz';
@@ -225,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nextButton.textContent = 'Next';
         }
     }
-    
+
     /**  
      * Entriamo nel dettaglio della selezione dell'opzione.
      * 
@@ -237,19 +269,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function selectOption(event) {
         const selectedOption = event.currentTarget;
         const optionIndex = parseInt(selectedOption.dataset.index);
-        
+
         // Rimuove la selezione da tutte le opzioni
         document.querySelectorAll('.quiz-option').forEach(option => {
             option.classList.remove('selected');
         });
-        
+
         // Aggiunge la selezione all'opzione cliccata
         selectedOption.classList.add('selected');
-        
+
         // Salva la risposta dell'utente
         userAnswers[currentQuestionIndex] = optionIndex;
     }
-    
+
     // Domanda precedente
     function goToPreviousQuestion() {
         if (currentQuestionIndex > 0) {
@@ -257,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
             displayQuestion(currentQuestionIndex);
         }
     }
-    
+
     // Domanda successiva o termina il quiz
     function goToNextQuestion() {
         if (currentQuestionIndex < quizQuestions.length - 1) {
@@ -267,22 +299,20 @@ document.addEventListener('DOMContentLoaded', function() {
             finishQuiz();
         }
     }
-    
+
     // Termine del quiz ed interruzione del timer
     function finishQuiz() {
         clearInterval(timerInterval);
-        
+
         // Calcolo del punteggio
         const score = calculateScore();
-
-        // https://dev.to/mayankav/javascript-s-broken-mathematics-304m
         const percentage = Math.round((score.correct / quizQuestions.length) * 100);
-        
+
         // Aggiorna il punteggio
         scorePercentage.textContent = `${percentage}%`;
         correctAnswers.textContent = score.correct;
         scoreProgress.style.width = `${percentage}%`;
-        
+
         // Messaggi basati sul punteggio 
         if (percentage >= 90) {
             scoreMessage.className = 'alert alert-success mt-3';
@@ -297,58 +327,54 @@ document.addEventListener('DOMContentLoaded', function() {
             scoreMessage.className = 'alert alert-danger mt-3';
             scoreMessage.innerHTML = '<strong>Need improvement.</strong> We recommend reviewing the educational content to better protect yourself online.';
         }
-        
+
         // Mostra il risultato finale
         questionsSection.classList.add('d-none');
         quizResults.classList.remove('d-none');
-        
-        /**
-         * Utilizzo il local storage ed è un magheggio assurdo per le app client-side.
-         * Questo mi permette di salvare i risultati senza settare un cookie. ( Riga 407 )
-         * In questo modo l'utente può vedere i risultati anche dopo aver chiuso il browser.
-         */
+
+        // Salva i risultati
         saveQuizResults(percentage, score.correct, quizQuestions.length);
     }
-    
+
     // Calcolo del punteggio
     function calculateScore() {
         let correct = 0;
-        
+
         userAnswers.forEach((answer, index) => {
             if (answer === quizQuestions[index].correctAnswer) {
                 correct++;
             }
         });
-        
+
         return {
             correct: correct,
             total: quizQuestions.length
         };
     }
-    
+
     // Aggiorna il timer
     function updateTimer() {
         const currentTime = new Date();
         const elapsedTime = Math.floor((currentTime - quizStartTime) / 1000); // Secondi 
-        
+
         const minutes = Math.floor(elapsedTime / 60);
         const seconds = elapsedTime % 60;
-        
+
         timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
-    
+
     // Revisione delle domande
     function showReview() {
         quizResults.classList.add('d-none');
         reviewContainer.classList.remove('d-none');
-        
+
         let reviewHTML = '';
-        
+
         quizQuestions.forEach((question, index) => {
             const userAnswer = userAnswers[index];
             const isCorrect = userAnswer === question.correctAnswer;
             const statusClass = isCorrect ? 'success' : 'danger';
-            
+
             reviewHTML += `
                 <div class="card mb-4">
                     <div class="card-header bg-${statusClass} text-white d-flex justify-content-between align-items-center">
@@ -359,16 +385,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h5 class="card-title">${question.question}</h5>
                         <div class="options-review mt-3">
             `;
-            
+
             question.options.forEach((option, optionIndex) => {
                 let optionClass = '';
-                
+
                 if (optionIndex === question.correctAnswer) {
                     optionClass = 'correct';
                 } else if (userAnswer === optionIndex) {
                     optionClass = 'incorrect';
                 }
-                
+
                 reviewHTML += `
                     <div class="quiz-option ${optionClass}">
                         <div class="d-flex align-items-start">
@@ -380,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 `;
             });
-            
+
             reviewHTML += `
                         </div>
                         <div class="answer-explanation">
@@ -390,21 +416,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
         });
-        
+
         questionsReview.innerHTML = reviewHTML;
     }
-    
+
     // Torna ai risultati
     function backToResults() {
         reviewContainer.classList.add('d-none');
         quizResults.classList.remove('d-none');
     }
-    
+
     // Ricomincia il quiz
     function retakeQuiz() {
         startQuiz();
     }
-    
+
     // Magheggio raccontato prima
     /**
     *   "date": "2025-05-17T19:53:14.451Z",
@@ -421,13 +447,13 @@ document.addEventListener('DOMContentLoaded', function() {
             total: total,
             timeSpent: timerDisplay.textContent
         };
-        
+
         // Qua cerco di recuperare i risultati precedenti sennò creo un oggetto empty
         let quizHistory = JSON.parse(localStorage.getItem('quizHistory')) || [];
-        
+
         // Push dei risultati nella storia
         quizHistory.push(results);
-        
+
         // Salvo i risultati nel local storage
         localStorage.setItem('quizHistory', JSON.stringify(quizHistory));
 

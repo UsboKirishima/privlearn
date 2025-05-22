@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-<!-- Settiamo il tema bootstrap del DOM scuro -->
+<!-- Impostiamo il tema bootstrap del DOM su scuro -->
 <html lang="it" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Learn</title>
-    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     
     <!-- https://fontawesome.com/ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -15,8 +15,8 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navigazione -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-subtle sticky-top">
         <div class="container">
 <<<<<<< HEAD:pages/privacy.html
             <a class="navbar-brand" href="../index.html">
@@ -39,7 +39,7 @@
 >>>>>>> 34557ee (fix: fix root dir):templates/privacy.html
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="privacy.html">Privacy</a>
+                        <a class="nav-link fw-semibold" href="privacy.html">Privacy</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="cyber_attacks.html">Cyber Attacks</a>
@@ -55,13 +55,12 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Contenuto Principale -->
     <main class="container py-4">
         <div class="row mb-4">
             <div class="col-lg-8">
-                <h1 class="mb-4">Online Privacy</h1>
-                <p class="lead">Understanding how to protect your personal information online is essential in today's
-                    digital world.</p>
+                <h1 class="mb-4">Privacy Online</h1>
+                <p class="lead">Comprendere come proteggere le tue informazioni personali online è essenziale nel mondo digitale di oggi.</p>
             </div>
             <div class="col-lg-4 text-center">
                 <i class="fas fa-user-shield fa-6x text-primary"></i>
@@ -70,27 +69,22 @@
 
         <div class="card mb-4">
             <div class="card-body">
-                <h2>What is Online Privacy?</h2>
-                <p>Online privacy refers to the level of protection for your personal data when you're using the
-                    internet. It includes how data is collected, stored, shared, and used by websites, applications, and
-                    other online services.</p>
+                <h2>Cos'è la Privacy Online?</h2>
+                <p>La privacy online si riferisce al livello di protezione dei tuoi dati personali quando utilizzi internet. Include come i dati vengono raccolti, archiviati, condivisi e utilizzati da siti web, applicazioni e altri servizi online.</p>
 
                 <div class="alert alert-info">
-                    <i class="fas fa-info-circle me-2"></i> <strong>Did you know?</strong> The average person has their
-                    data collected by 12 different companies every day when browsing online.
+                    <i class="fas fa-info-circle me-2"></i> <strong>Lo sapevi?</strong> La persona media ha i propri dati raccolti da 12 diverse società ogni giorno durante la navigazione online.
                 </div>
             </div>
         </div>
 
-        <h2 class="mb-3">Key Privacy Concerns</h2>
+        <h2 class="mb-3">Principali Preoccupazioni sulla Privacy</h2>
         <div class="row g-4 mb-4">
             <div class="col-md-6">
                 <div class="card h-100">
                     <div class="card-body">
                         <h3 class="card-title"><i class="fas fa-cookie-bite text-warning me-2"></i> Data Collection</h3>
-                        <p class="card-text">Websites and applications collect data about your browsing habits,
-                            purchases, location, and personal information through cookies, trackers, and sign-up forms.
-                        </p>
+                        <p class="card-text">Siti web e applicazioni raccolgono dati sulle tue abitudini di navigazione, acquisti, posizione e informazioni personali attraverso cookie, tracker e moduli di registrazione.</p>
                     </div>
                 </div>
             </div>
@@ -98,10 +92,8 @@
             <div class="col-md-6">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h3 class="card-title"><i class="fas fa-bullhorn text-warning me-2"></i> Targeted Advertising
-                        </h3>
-                        <p class="card-text">Your online activity is used to create a profile about you, which is then
-                            used to target personalized advertisements to you across different platforms.</p>
+                        <h3 class="card-title"><i class="fas fa-bullhorn text-warning me-2"></i> Pubblicità Mirata</h3>
+                        <p class="card-text">La tua attività online viene utilizzata per creare un profilo su di te, che viene poi usato per mostrarti pubblicità personalizzate su diverse piattaforme.</p>
                     </div>
                 </div>
             </div>
@@ -110,8 +102,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h3 class="card-title"><i class="fas fa-building text-warning me-2"></i> Data Brokers</h3>
-                        <p class="card-text">Companies collect, analyze, and sell your personal information to other
-                            businesses for marketing purposes, creating detailed profiles about your preferences.</p>
+                        <p class="card-text">Le aziende raccolgono, analizzano e vendono le tue informazioni personali ad altre imprese per scopi di marketing, creando profili dettagliati sulle tue preferenze.</p>
                     </div>
                 </div>
             </div>
@@ -119,32 +110,28 @@
             <div class="col-md-6">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h3 class="card-title"><i class="fas fa-eye text-warning me-2"></i> Surveillance</h3>
-                        <p class="card-text">Government agencies and corporations may monitor online activities,
-                            messaging, and social media, sometimes without users' knowledge or consent.</p>
+                        <h3 class="card-title"><i class="fas fa-eye text-warning me-2"></i> Sorveglianza</h3>
+                        <p class="card-text">Agenzie governative e corporation possono monitorare attività online, messaggi e social media, a volte senza la conoscenza o il consenso degli utenti.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <h2 class="mb-3">How to Protect Your Privacy Online</h2>
+        <h2 class="mb-3">Come Proteggere la Tua Privacy Online</h2>
         <div class="accordion mb-4" id="privacyTipsAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <i class="fas fa-browser me-2"></i> Use Privacy-Focused Browsers & Extensions
+                        <i class="fas fa-browser me-2"></i> Usa Browser ed Estensioni Orientati alla Privacy
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#privacyTipsAccordion">
                     <div class="accordion-body">
-                        <p>Consider using browsers that prioritize privacy like Firefox or Brave. Install privacy
-                            extensions such as Privacy Badger, uBlock Origin, or HTTPS Everywhere to block trackers and
-                            encrypt connections.</p>
+                        <p>Considera l'uso di browser che privilegiano la privacy come Firefox o Brave. Installa estensioni per la privacy come Privacy Badger, uBlock Origin o HTTPS Everywhere per bloccare i tracker e cifrare le connessioni.</p>
                         <div class="alert alert-success">
-                            <strong>Pro Tip:</strong> Regularly clear your browser cookies and cache to remove stored
-                            tracking data.
+                            <strong>Consiglio:</strong> Cancella regolarmente i cookie e la cache del browser per rimuovere i dati di tracciamento memorizzati.
                         </div>
                     </div>
                 </div>
@@ -154,16 +141,15 @@
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <i class="fas fa-key me-2"></i> Use Strong, Unique Passwords
+                        <i class="fas fa-key me-2"></i> Usa Password Forti e Uniche
                     </button>
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#privacyTipsAccordion">
                     <div class="accordion-body">
-                        <p>Create strong, unique passwords for each of your online accounts. Consider using a password
-                            manager to generate and store complex passwords securely.</p>
+                        <p>Crea password forti e uniche per ciascuno dei tuoi account online. Considera l'uso di un gestore di password per generare e memorizzare password complesse in modo sicuro.</p>
                         <div class="alert alert-success">
-                            <strong>Good example:</strong> "j8K!p2&xLm9@zA" is much stronger than "password123"
+                            <strong>Buon esempio:</strong> "j8K!p2&xLm9@zA" è molto più sicura di "password123"
                         </div>
                     </div>
                 </div>
@@ -173,17 +159,15 @@
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        <i class="fas fa-mask me-2"></i> Use a Virtual Private Network (VPN)
+                        <i class="fas fa-mask me-2"></i> Usa una Virtual Private Network (VPN)
                     </button>
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                     data-bs-parent="#privacyTipsAccordion">
                     <div class="accordion-body">
-                        <p>A VPN encrypts your internet connection and masks your IP address, making it more difficult
-                            for websites, your ISP, or third parties to track your online activities.</p>
+                        <p>Una VPN cifra la tua connessione internet e maschera il tuo indirizzo IP, rendendo più difficile per siti web, il tuo provider internet o terze parti tracciare le tue attività online.</p>
                         <div class="alert alert-warning">
-                            <strong>Remember:</strong> Not all VPNs are created equal. Research before choosing one, as
-                            some may collect and sell your data.
+                            <strong>Ricorda:</strong> Non tutte le VPN sono uguali. Fai ricerche prima di sceglierne una, poiché alcune potrebbero raccogliere e vendere i tuoi dati.
                         </div>
                     </div>
                 </div>
@@ -193,17 +177,15 @@
                 <h2 class="accordion-header" id="headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        <i class="fas fa-sliders-h me-2"></i> Review Privacy Settings
+                        <i class="fas fa-sliders-h me-2"></i> Rivedi le Impostazioni sulla Privacy
                     </button>
                 </h2>
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                     data-bs-parent="#privacyTipsAccordion">
                     <div class="accordion-body">
-                        <p>Regularly review and adjust privacy settings on social media platforms, Google accounts,
-                            mobile apps, and other online services. Limit the data you share and who can access it.</p>
+                        <p>Rivedi e regola regolarmente le impostazioni sulla privacy sui social media, account Google, app mobile e altri servizi online. Limita i dati che condividi e chi può accedervi.</p>
                         <div class="alert alert-success">
-                            <strong>Pro Tip:</strong> Set a calendar reminder to review your privacy settings every few
-                            months.
+                            <strong>Consiglio:</strong> Imposta un promemoria sul calendario per rivedere le tue impostazioni sulla privacy ogni pochi mesi.
                         </div>
                     </div>
                 </div>
@@ -213,16 +195,15 @@
                 <h2 class="accordion-header" id="headingFive">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        <i class="fas fa-fingerprint me-2"></i> Enable Two-Factor Authentication (2FA)
+                        <i class="fas fa-fingerprint me-2"></i> Abilita l'Autenticazione a Due Fattori (2FA)
                     </button>
                 </h2>
                 <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                     data-bs-parent="#privacyTipsAccordion">
                     <div class="accordion-body">
-                        <p>Add an extra layer of security to your accounts by enabling 2FA, which requires both your
-                            password and a second form of verification (like a code sent to your phone).</p>
+                        <p>Aggiungi un ulteriore livello di sicurezza ai tuoi account abilitando il 2FA, che richiede sia la tua password che una seconda forma di verifica (come un codice inviato al tuo telefono).</p>
                         <div class="alert alert-info">
-                            <strong>Fun fact:</strong> 2FA can prevent over 99% of automated account hacking attempts!
+                            <strong>Curiosità:</strong> Il 2FA può prevenire oltre il 99% dei tentativi automatizzati di hacking degli account!
                         </div>
                     </div>
                 </div>
@@ -231,34 +212,32 @@
 
         <div class="card mb-4">
             <div class="card-body">
-                <h2>Digital Footprint Awareness</h2>
-                <p>Your digital footprint is the trail of data you leave behind when using the internet. It includes:
-                </p>
+                <h2>Consapevolezza dell'Impronta Digitale</h2>
+                <p>La tua impronta digitale è la traccia di dati che lasci quando usi internet. Include:</p>
 
                 <ul>
-                    <li>Websites you visit</li>
-                    <li>Emails you send</li>
-                    <li>Social media activity</li>
-                    <li>Online purchases</li>
-                    <li>App usage</li>
-                    <li>Location data</li>
+                    <li>Siti web che visiti</li>
+                    <li>Email che invii</li>
+                    <li>Attività sui social media</li>
+                    <li>Acquisti online</li>
+                    <li>Utilizzo delle app</li>
+                    <li>Dati di posizione</li>
                 </ul>
 
-                <p>Be mindful of what you share online, as this information can be compiled to create a detailed profile
-                    about you. Regularly search for yourself online to see what information is publicly available.</p>
+                <p>Sii consapevole di ciò che condividi online, poiché queste informazioni possono essere compilate per creare un profilo dettagliato su di te. Cerca regolarmente il tuo nome online per vedere quali informazioni sono pubblicamente disponibili.</p>
             </div>
         </div>
 
         <div class="text-center mb-5">
-            <h3>Ready to test your knowledge?</h3>
-            <a href="quiz.html" class="btn btn-primary btn-lg">Take the Quiz</a>
+            <h3>Pronto a mettere alla prova le tue conoscenze?</h3>
+            <a href="quiz.html" class="btn btn-primary btn-lg">Fai il Quiz</a>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 bg-dark">
         <div class="container text-center">
-            <span class="text-muted">© 2025 Davide Usberti, Matthew Gasparetti, Alesio Broshka | Created for educational purposes</span>
+            <span class="text-muted">© 2025 Davide Usberti, Matthew Gasparetti, Alesio Broshka | Creato per scopi educativi</span>
         </div>
     </footer>
 
