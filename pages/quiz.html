@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- Settiamo il tema bootstrap del DOM scuro -->
+<!-- Impostiamo il tema bootstrap scuro -->
 <html lang="it" data-bs-theme="dark">
 
 <head>
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <!-- Navigation -->
+    <!-- Navigazione -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark-subtle sticky-top">
         <div class="container">
 <<<<<<< HEAD:pages/quiz.html
@@ -42,7 +42,7 @@
                         <a class="nav-link" href="privacy.html">Privacy</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cyber_attacks.html">Cyber Attacks</a>
+                        <a class="nav-link" href="cyber_attacks.html">Attacchi Informatici</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="phishing.html">Phishing</a>
@@ -55,57 +55,53 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Contenuto Principale -->
     <main class="container py-4">
         <div class="text-center mb-5">
-            <h1 class="mb-3">Test Your Online Privacy Knowledge</h1>
-            <p class="lead">Answer the following questions to test your understanding of online privacy and cyber
-                security concepts.</p>
+            <h1 class="mb-3">Metti alla Prova la Tua Conoscenza sulla Privacy Online</h1>
+            <p class="lead">Rispondi alle seguenti domande per testare la tua comprensione dei concetti di privacy online e sicurezza informatica.</p>
         </div>
 
         <div class="card mb-4" id="quiz-container">
             <div class="card-header bg-primary-subtle text-white">
-                <h2 class="mb-0">Online Privacy & Security Quiz</h2>
+                <h2 class="mb-0">Quiz su Privacy Online e Sicurezza</h2>
             </div>
             <div class="card-body">
                 <div id="quiz-intro">
-                    <p>This quiz contains multiple-choice questions about online privacy, cyber attacks, and phishing.
-                        Test your knowledge and see how well you can protect yourself online!</p>
+                    <p>Questo quiz contiene domande a scelta multipla sulla privacy online, attacchi informatici e phishing. Metti alla prova la tua conoscenza e scopri quanto sei preparato a proteggerti online!</p>
                     <div class="alert alert-info">
-                        <i class="fas fa-info-circle me-2"></i> The quiz consists of 10 questions. You'll receive your
-                        score at the end.
+                        <i class="fas fa-info-circle me-2"></i> Il quiz consiste di 10 domande. Riceverai il tuo punteggio alla fine.
                     </div>
-                    <button id="start-quiz" class="btn btn-primary btn-lg mt-3">Start Quiz</button>
+                    <button id="start-quiz" class="btn btn-primary btn-lg mt-3">Inizia il Quiz</button>
                 </div>
 
                 <div id="quiz-questions" class="d-none">
                     <div class="mb-3">
-                        <span class="badge bg-primary-subtle" id="question-counter">Question 1/10</span>
+                        <span class="badge bg-primary-subtle" id="question-counter">Domanda 1/10</span>
                         <span class="float-end"><i class="fas fa-clock me-1"></i> <span id="timer">00:00</span></span>
                     </div>
 
                     <div id="question-container" class="mb-4">
-                        <!-- Questions will be inserted here by JavaScript -->
+                        <!-- Le domande verranno inserite qui da JavaScript -->
                     </div>
 
                     <div class="d-flex justify-content-between mt-4">
-                        <button id="prev-button" class="btn btn-secondary" disabled>Previous</button>
-                        <button id="next-button" class="btn btn-primary">Next</button>
+                        <button id="prev-button" class="btn btn-secondary" disabled>Precedente</button>
+                        <button id="next-button" class="btn btn-primary">Successiva</button>
                     </div>
                 </div>
 
                 <div id="quiz-results" class="d-none text-center">
-                    <h3 class="mb-4">Your Results</h3>
+                    <h3 class="mb-4">I Tuoi Risultati</h3>
                     <div class="result-circle mx-auto mb-4">
                         <span id="score-percentage">0%</span>
                     </div>
-                    <p>You answered <span id="correct-answers">0</span> out of <span id="total-questions">10</span>
-                        questions correctly.</p>
+                    <p>Hai risposto correttamente a <span id="correct-answers">0</span> domande su <span id="total-questions">10</span>.</p>
 
                     <div id="score-message" class="alert mt-3"></div>
 
                     <div class="mt-4">
-                        <h4>How did you do?</h4>
+                        <h4>Come sei andato?</h4>
                         <div class="progress mb-3">
                             <div class="progress-bar bg-success" role="progressbar" id="score-progress"
                                 style="width: 0%"></div>
@@ -113,17 +109,17 @@
                     </div>
 
                     <div class="mt-4">
-                        <button id="review-answers" class="btn btn-primary me-2">Review Answers</button>
-                        <button id="retake-quiz" class="btn btn-outline-secondary">Retake Quiz</button>
+                        <button id="review-answers" class="btn btn-primary me-2">Rivedi Risposte</button>
+                        <button id="retake-quiz" class="btn btn-outline-secondary">Rifai il Quiz</button>
                     </div>
                 </div>
 
                 <div id="review-container" class="d-none">
-                    <h3 class="mb-4">Review Your Answers</h3>
+                    <h3 class="mb-4">Rivedi le Tue Risposte</h3>
                     <div id="questions-review">
-                        <!-- Review content will be inserted here by JavaScript -->
+                        <!-- Il contenuto di revisione verrà inserito qui da JavaScript -->
                     </div>
-                    <button id="back-to-results" class="btn btn-primary mt-4">Back to Results</button>
+                    <button id="back-to-results" class="btn btn-primary mt-4">Torna ai Risultati</button>
                 </div>
             </div>
         </div>
@@ -133,7 +129,7 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3 bg-dark">
         <div class="container text-center">
-            <span class="text-muted">© 2025 Davide Usberti, Matthew Gasparetti, Alesio Broshka | Created for educational purposes</span>
+            <span class="text-muted">© 2025 Davide Usberti, Matthew Gasparetti, Alesio Broshka | Creato per scopi educativi</span>
         </div>
     </footer>
 
