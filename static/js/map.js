@@ -7,7 +7,7 @@ const map = L.map('map',{
 }).setView([44.8121, 10.3365], 16);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© Gasparetti Matthew'
+    attribution: '© Broshka Alesio'
 }).addTo(map);
 
 L.marker([44.8121, 10.3365]).addTo(map)
