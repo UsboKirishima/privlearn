@@ -46,114 +46,114 @@ document.addEventListener('DOMContentLoaded', function () {
     // Domande, opzioni, risposte corrette e spiegazioni
     const quizQuestions = [
         {
-            question: "What is phishing?",
+            question: "Cos'è il phishing?",
             options: [
-                "A type of computer virus that corrupts files",
-                "An attack that attempts to steal sensitive information by disguising as a trustworthy entity",
-                "The practice of sending bulk emails to multiple recipients",
-                "A form of encryption that protects data"
+                "Un tipo di virus informatico che corrompe i file",
+                "Un attacco che tenta di rubare informazioni sensibili fingendosi un'entità affidabile",
+                "La pratica di inviare email di massa a più destinatari",
+                "Una forma di crittografia che protegge i dati"
             ],
             correctAnswer: 1,
-            explanation: "Phishing is a cybercrime where attackers disguise themselves as trustworthy entities to trick victims into revealing sensitive information such as passwords, credit card numbers, or personal data."
+            explanation: "Il phishing è un crimine informatico in cui gli aggressori si spacciano per entità affidabili per indurre le vittime a rivelare informazioni sensibili come password, numeri di carte di credito o dati personali."
         },
         {
-            question: "Which of the following is a common sign of a phishing email?",
+            question: "Quale delle seguenti è un segnale comune di una email di phishing?",
             options: [
-                "An email from someone you regularly communicate with",
-                "A message with perfect grammar and spelling",
-                "Urgent requests for personal information",
-                "Email sent from a company domain that matches the company name"
+                "Un'email da qualcuno con cui comunichi regolarmente",
+                "Un messaggio con grammatica e ortografia perfette",
+                "Richieste urgenti di informazioni personali",
+                "Email inviata da un dominio aziendale che corrisponde al nome dell'azienda"
             ],
             correctAnswer: 2,
-            explanation: "Urgency is a common tactic in phishing attempts. Legitimate organizations rarely create panic or demand immediate action regarding sensitive information."
+            explanation: "L'urgenza è una tattica comune nei tentativi di phishing. Le organizzazioni legittime raramente creano panico o richiedono azioni immediate riguardo informazioni sensibili."
         },
         {
-            question: "What is two-factor authentication (2FA)?",
+            question: "Cos'è l'autenticazione a due fattori (2FA)?",
             options: [
-                "A system that requires two passwords",
-                "A method that requires two separate authentication factors to verify identity",
-                "A system that automatically changes your password every two months",
-                "A type of encryption that uses two different keys"
+                "Un sistema che richiede due password",
+                "Un metodo che richiede due fattori di autenticazione separati per verificare l'identità",
+                "Un sistema che cambia automaticamente la password ogni due mesi",
+                "Un tipo di crittografia che utilizza due chiavi diverse"
             ],
             correctAnswer: 1,
-            explanation: "Two-factor authentication adds an extra layer of security by requiring two different types of verification: something you know (like a password) and something you have (like a phone) or something you are (like a fingerprint)."
+            explanation: "L'autenticazione a due fattori aggiunge un ulteriore livello di sicurezza richiedendo due tipi diversi di verifica: qualcosa che conosci (come una password) e qualcosa che possiedi (come un telefono) o qualcosa che sei (come un'impronta digitale)."
         },
         {
-            question: "Which of the following is the best password practice?",
+            question: "Quale delle seguenti è la migliore pratica per le password?",
             options: [
-                "Using the same strong password for all your accounts",
-                "Writing down your passwords and keeping them near your computer",
-                "Using unique, complex passwords for each account and managing them with a password manager",
-                "Changing your password every day"
+                "Usare la stessa password forte per tutti i tuoi account",
+                "Scrivere le password e tenerle vicino al computer",
+                "Usare password uniche e complesse per ogni account e gestirle con un password manager",
+                "Cambiare la password ogni giorno"
             ],
             correctAnswer: 2,
-            explanation: "Using unique, complex passwords for each account prevents a breach of one account from affecting others. Password managers help generate and store these complex passwords securely."
+            explanation: "Usare password uniche e complesse per ogni account impedisce che una violazione di un account comprometta anche gli altri. I password manager aiutano a generare e conservare queste password in modo sicuro."
         },
         {
-            question: "What is ransomware?",
+            question: "Cos'è un ransomware?",
             options: [
-                "Software that displays unwanted advertisements",
-                "Malware that encrypts files and demands payment for decryption",
-                "A program that slows down your computer's performance",
-                "A tool used to recover accidentally deleted files"
+                "Software che mostra pubblicità indesiderate",
+                "Malware che cripta i file e richiede un pagamento per la decriptazione",
+                "Un programma che rallenta le prestazioni del computer",
+                "Uno strumento per recuperare file cancellati accidentalmente"
             ],
             correctAnswer: 1,
-            explanation: "Ransomware is malicious software that encrypts a victim's files. The attacker then demands a ransom from the victim to restore access to the data upon payment."
+            explanation: "Il ransomware è un software dannoso che cripta i file della vittima. L'aggressore poi richiede un riscatto per ripristinare l'accesso ai dati dopo il pagamento."
         },
         {
-            question: "Which of the following is NOT a good way to protect your privacy on social media?",
+            question: "Quale delle seguenti NON è una buona pratica per proteggere la privacy sui social media?",
             options: [
-                "Regularly reviewing and updating privacy settings",
-                "Being selective about friend/connection requests",
-                "Sharing your personal achievements and life updates with everyone",
-                "Limiting the personal information you provide in your profile"
+                "Rivedere e aggiornare regolarmente le impostazioni della privacy",
+                "Essere selettivi nelle richieste di amicizia/connessione",
+                "Condividere i tuoi successi e aggiornamenti di vita con tutti",
+                "Limitare le informazioni personali fornite nel profilo"
             ],
             correctAnswer: 2,
-            explanation: "Sharing extensive personal information publicly on social media can expose you to various privacy risks including identity theft and targeted phishing attacks."
+            explanation: "Condividere molte informazioni personali pubblicamente sui social media può esporti a vari rischi per la privacy, tra cui furto d'identità e attacchi di phishing mirati."
         },
         {
-            question: "What is a VPN primarily used for?",
+            question: "A cosa serve principalmente una VPN?",
             options: [
-                "Speeding up your internet connection",
-                "Blocking all advertisements",
-                "Encrypting your internet connection and hiding your IP address",
-                "Creating backup copies of your data"
+                "Velocizzare la connessione internet",
+                "Bloccare tutte le pubblicità",
+                "Criptare la connessione internet e nascondere l'indirizzo IP",
+                "Creare copie di backup dei dati"
             ],
             correctAnswer: 2,
-            explanation: "A Virtual Private Network (VPN) encrypts your internet connection and masks your IP address, making it more difficult for third parties to track your online activities or intercept your data."
+            explanation: "Una Virtual Private Network (VPN) cripta la connessione internet e maschera l'indirizzo IP, rendendo più difficile per terzi tracciare le tue attività online o intercettare i tuoi dati."
         },
         {
-            question: "What should you do if you suspect you've fallen victim to a phishing attack?",
+            question: "Cosa dovresti fare se sospetti di essere vittima di un attacco di phishing?",
             options: [
-                "Ignore it and hope nothing happens",
-                "Only change the password for the affected account",
-                "Immediately change passwords for all your accounts, run a security scan, and monitor for suspicious activity",
-                "Disconnect your computer from the internet permanently"
+                "Ignorare e sperare che non succeda nulla",
+                "Cambiare solo la password dell'account interessato",
+                "Cambiare immediatamente le password di tutti gli account, eseguire una scansione di sicurezza e monitorare attività sospette",
+                "Disconnettere il computer da internet in modo permanente"
             ],
             correctAnswer: 2,
-            explanation: "Quick action is essential after a phishing attack. You should change all passwords (attackers might have access to multiple accounts), run security scans to check for malware, and monitor your accounts for any unauthorized activity."
+            explanation: "Agire rapidamente è essenziale dopo un attacco di phishing. Dovresti cambiare tutte le password (gli aggressori potrebbero avere accesso a più account), eseguire scansioni di sicurezza e monitorare eventuali attività non autorizzate."
         },
         {
-            question: "Which of the following is an example of a social engineering attack?",
+            question: "Quale delle seguenti è un esempio di attacco di ingegneria sociale?",
             options: [
-                "A hacker using specialized software to crack passwords",
-                "A virus corrupting files on your computer",
-                "Someone calling pretending to be from IT support to get your login credentials",
-                "A power surge damaging your computer hardware"
+                "Un hacker che usa software specializzato per decifrare password",
+                "Un virus che corrompe i file del computer",
+                "Qualcuno che si finge del supporto IT per ottenere le tue credenziali di accesso",
+                "Una sovratensione che danneggia l'hardware del computer"
             ],
             correctAnswer: 2,
-            explanation: "Social engineering attacks manipulate people into breaking security procedures or revealing sensitive information by exploiting human psychology rather than technical hacking techniques."
+            explanation: "Gli attacchi di ingegneria sociale manipolano le persone per indurle a violare procedure di sicurezza o rivelare informazioni sensibili sfruttando la psicologia umana piuttosto che tecniche di hacking tecniche."
         },
         {
-            question: "What is the best way to verify if an email from your bank is legitimate?",
+            question: "Qual è il modo migliore per verificare se un'email della tua banca è legittima?",
             options: [
-                "Check if the email address looks professional",
-                "Click on links in the email to see if the website looks real",
-                "Contact your bank directly using the official contact information from their website",
-                "Reply to the email and ask if it's really from the bank"
+                "Controllare se l'indirizzo email sembra professionale",
+                "Cliccare sui link nell'email per vedere se il sito sembra reale",
+                "Contattare direttamente la banca usando i recapiti ufficiali dal loro sito web",
+                "Rispondere all'email chiedendo se è davvero della banca"
             ],
             correctAnswer: 2,
-            explanation: "Never use the contact information or links provided in the suspicious email. Instead, contact your bank through official channels (phone number from their official website or visit a branch) to verify any communication."
+            explanation: "Non usare mai i recapiti o i link forniti nell'email sospetta. Contatta invece la banca tramite canali ufficiali (numero di telefono dal sito ufficiale o recandoti in filiale) per verificare qualsiasi comunicazione."
         }
     ];
 
