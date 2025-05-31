@@ -34,13 +34,14 @@
 - [Bootstrap 5](https://getbootstrap.com/)
 - [FontAwesome](https://fontawesome.com/)
 - [Leaflet.js](https://leafletjs.com/)
+- [Trello](https://trello.com/invite/b/681f5448e8439cf320dbe3cd/ATTI89312d09fd76ec92a56f3c8edc468ac3C98BCBCE/privacy-learn)
 - HTML5, CSS3, JavaScript
 
 ## Come Avviare il Progetto
 
 1. **Clona il repository**
    ```sh
-   git clone https://github.com/tuo-utente/privlearn.git
+   git clone https://github.com/UsboKirishima/privlearn.git
    ```
 2. **Apri `index.html`** con il tuo browser per iniziare a esplorare il sito.
 
